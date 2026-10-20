@@ -1,0 +1,14 @@
+
+@model HospitalAppointmentSystem.Models.Doctor
+
+<h2>Doctor Details</h2>
+
+<p><b>Doctor ID:</b> @Model.DoctorId</p>
+<p><b>Name:</b> @Model.DoctorName</p>
+<p><b>Specialization:</b> @Model.Specialization</p>
+<p><b>Experience:</b> @Model.Experience years</p>
+<p><b>Consultation Fee:</b> ₹@Model.ConsultationFee</p>
+<p><b>Service Charge:</b> ₹100</p>
+<h4>Total Charge: ₹@ViewBag.TotalCharge</h4>
+
+<a asp-controller="Home" asp-action="Index">Back to Doctors</a>

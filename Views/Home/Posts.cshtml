@@ -1,0 +1,24 @@
+
+@model List<HospitalAppointmentSystem.Controllers.Post>
+
+<h2>Posts from API</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Post ID</th>
+            <th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var post in Model)
+        {
+            <tr>
+                <td>@post.Id</td>
+                <td>@post.Title</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Home" asp-action="Index">Back to Doctors</a>

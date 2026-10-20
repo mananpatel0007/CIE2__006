@@ -1,0 +1,21 @@
+
+@model HospitalAppointmentSystem.Models.Doctor
+
+<h2>Book Appointment</h2>
+
+<p>Doctor: @Model.DoctorName</p>
+<p>Specialization: @Model.Specialization</p>
+
+<form asp-controller="Home" asp-action="BookAppointment" method="post">
+    <input type="hidden" name="DoctorId" value="@Model.DoctorId" />
+
+    <div class="mb-3">
+        <label for="PatientName">Patient Name</label>
+        <input type="text" id="PatientName" name="PatientName"
+               class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Submit Appointment
+    </button>
+</form>

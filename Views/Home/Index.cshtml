@@ -1,0 +1,46 @@
+
+@model IEnumerable<HospitalAppointmentSystem.Models.Doctor>
+
+<h2>Hospital - Doctor List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Doctor Name</th>
+            <th>Specialization</th>
+            <th>Experience</th>
+            <th>Consultation Fee</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doctor in Model)
+        {
+            <tr>
+                <td>@doctor.DoctorId</td>
+                <td>@doctor.DoctorName</td>
+                <td>@doctor.Specialization</td>
+                <td>@doctor.Experience years</td>
+                <td>₹@doctor.ConsultationFee</td>
+                <td>
+                    <a asp-controller="Home"
+                       asp-action="Details"
+                       asp-route-DoctorId="@doctor.DoctorId">
+                        Details
+                    </a>
+                    |
+                    <a asp-controller="Home"
+                       asp-action="Appointment"
+                       asp-route-DoctorId="@doctor.DoctorId">
+                        Book Appointment
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-controller="Home" asp-action="Posts">View Posts</a>
+</p>
